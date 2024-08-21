@@ -14,12 +14,9 @@ const signupUser = async (req, res) => {
 
     res.status(200).json({ email, user });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: err.message });
+    res.status(400).json({ error: err.message });
     return;
   }
-
-  res.json({ mssg: "Signup User" });
 };
 
 module.exports = { signupUser, loginUser };
